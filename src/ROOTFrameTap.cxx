@@ -9,7 +9,7 @@
 #include "TH2I.h"
 #include "TTree.h"
 
-#include "WireCellIface/FrameTools.h"
+#include "WireCellAux/FrameTools.h"
 #include "WireCellUtil/NamedFactory.h"
 
 #include <string>
@@ -134,7 +134,7 @@ void Root::ROOTFrameTap::fill_hist(const IFrame::pointer &frame,
                                      TFile *output_tf) const {
 
   for (auto tag : frame->trace_tags()) {
-    ITrace::vector traces = FrameTools::tagged_traces(frame, tag);
+    ITrace::vector traces = Aux::tagged_traces(frame, tag);
     if (traces.empty()) {
       log->warn("ROOTFrameTap: no tagged traces for \"{}\"", tag);
       continue;

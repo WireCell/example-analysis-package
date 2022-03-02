@@ -24,4 +24,4 @@ def configure(cfg):
 
 def build(bld):
     bld.load('wcb')
-    bld.smplpkg('WireCellExampleAna', use='WireCellUtil WireCellIface WCT JSONCPP BOOST ROOTSYS EIGEN FFTW')
+    bld.smplpkg('WireCellExampleAna', use='WireCellUtil WireCellIface WCT SPDLOG JSONCPP BOOST ROOTSYS EIGEN FFTW')
